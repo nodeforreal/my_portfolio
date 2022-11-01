@@ -109,4 +109,5 @@ const Wrapper = styled.form`
     margin: 0 auto;
   }
 `;
+
 export default ContactForm;
