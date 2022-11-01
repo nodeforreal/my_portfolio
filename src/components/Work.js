@@ -30,7 +30,6 @@ const Work = () => {
       )
       .then((data) => {
         setProjects(data);
-        console.log(data);
       })
       .catch((error) => {
         console.log(error);
