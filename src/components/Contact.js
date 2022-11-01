@@ -4,7 +4,7 @@ import SocialMedia from "./SocialMedia";
 import ContactForm from "./ContactForm";
 import { MdEmail, MdOutlinePhoneAndroid } from "react-icons/md";
 import AnimateAppSection from "./AnimateAppSection";
-import contactBackground from '../assets/images/contact-background.png'
+import contactBackground from "../assets/images/contact-background.png";
 
 const Contact = () => {
   return (
@@ -16,10 +16,12 @@ const Contact = () => {
           <ContactCard
             icon={<MdEmail className="icon" />}
             label="kaliyamoorthy.2k@gmail.com"
+            directTo="mailto:kaliyamoorthy.2k@gmail.com"
           />
           <ContactCard
             icon={<MdOutlinePhoneAndroid className="icon" />}
             label="+(91) 6383628557"
+            directTo="tel:+(91) 6383628557"
           />
         </div>
         <ContactForm />
@@ -28,9 +30,9 @@ const Contact = () => {
   );
 };
 
-const ContactCard = ({ icon, label }) => {
+const ContactCard = ({ icon, label, directTo }) => {
   return (
-    <a href="mailto:kaliyamoorthy.2k@gmail.com" className="contact-card">
+    <a href={directTo} className="contact-card">
       <span className="grid-center">{icon}</span>
       <p>{label}</p>
     </a>
@@ -71,6 +73,9 @@ const Wrapper = styled.section`
     &:hover {
       background-color: var(--secondary);
       .icon {
+        color: var(--white);
+      }
+      p {
         color: var(--white);
       }
     }
