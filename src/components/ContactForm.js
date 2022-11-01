@@ -1,30 +1,48 @@
 import React from "react";
 import styled from "styled-components";
+import { useForm, ValidationError } from "@formspree/react";
 
 const ContactForm = () => {
+  const [state, submitForm] = useForm("meqdpjvy");
+
+  if (state.succeeded) {
+    return (
+      <h3
+        className="text-center"
+        style={{ margin: "160px 0", textShadow: "var(--text-shadow)" }}
+      >
+        Thank you for getting in touch!
+      </h3>
+    );
+  }
+
   return (
-    <Wrapper>
+    <Wrapper onSubmit={submitForm}>
       <div className="form-row">
         <label htmlFor="name" className="label">
           Name:
         </label>
         <input
           type="text"
+          name="name"
           id="name"
           placeholder="Your Name"
           className="input"
         />
+        <ValidationError prefix="Name" field="name" errors={state.errors} />
       </div>
       <div className="form-row">
         <label htmlFor="email" className="label">
           Email:
         </label>
         <input
-          type="text"
+          type="email"
+          name="email"
           id="email"
           className="input"
           placeholder="Your Email"
         />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
       <div className="form-row">
         <label htmlFor="message" className="label">
@@ -38,21 +56,30 @@ const ContactForm = () => {
           rows="10"
           placeholder="Your Message"
         ></textarea>
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
+        />
       </div>
       <div className="btn-wrapper">
-        <button className="btn primary-btn">Send message</button>
+        <button
+          className="btn primary-btn"
+          type="submit"
+          disabled={state.submitting}
+        >
+          Send message
+        </button>
       </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.form`
-  margin: 3rem 0 ;
+  margin: 3rem 0;
   max-width: 560px;
-  padding:0 1rem;
-  
-  .form-row {
-  }
+  padding: 0 1rem;
+
   .label {
     font-size: var(--small-text);
     font-weight: 520;
@@ -72,10 +99,12 @@ const Wrapper = styled.form`
       outline: none;
     }
   }
+
   .btn-wrapper {
     margin-top: 2rem;
     display: flex;
   }
+
   .primary-btn {
     margin: 0 auto;
   }
