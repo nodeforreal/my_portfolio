@@ -59,10 +59,7 @@ const projectsSlice = createSlice({
     [getAllProjects.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.projects = payload;
-      state.tempProjects = state.projects.filter((project) => {
-        const { tags } = project;
-        return tags.includes(state.selectedTag);
-      });
+      state.tempProjects = payload;
     },
     [getAllProjects.rejected]: (state) => {
       state.isLoading = false;
