@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <Wrapper className="section-grid section-bg-img" id="home">
       <SocialMedia />
-      <section className="hero-section app-section">
+      <section className="hero-section app-section app-nav-spacer">
         <motion.div
           className="hero-intro"
           initial={{ left: "-40%" }}
@@ -68,7 +68,6 @@ const IconCircle = ({ img, className }) => {
 
 const Wrapper = styled.section`
   min-height: calc(100vh - var(--nav-height));
-  padding: 2rem 1rem;
   background-image: url(${heroBackground});
   background-repeat: no-repeat;
   background-size: 100% auto;
