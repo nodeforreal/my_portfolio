@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { skills } from "../utils/constants";
 import SocialMedia from "./SocialMedia";
-import AnimateAppSection from './AnimateAppSection';
+import AnimateAppSection from "./AnimateAppSection";
 
 const Skill = () => {
   return (
@@ -40,7 +40,7 @@ const Wrapper = styled.section`
       grid-template-rows: repeat(4, 46px);
     }
 
-    @media (max-width: 760px) and (min-width:460px) {
+    @media (max-width: 760px) and (min-width: 460px) {
       grid-template-columns: repeat(4, 56px);
       grid-template-rows: repeat(4, 56px);
     }
