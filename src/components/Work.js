@@ -27,7 +27,7 @@ const Work = () => {
           initial={{ top: 100 }}
           whileInView={{ top: 0 }}
         >
-          {projects.map((card) => {
+          {projects.slice(0, 4).map((card) => {
             return <Card key={card._id} {...card} />;
           })}
         </motion.div>
