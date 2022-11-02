@@ -242,7 +242,7 @@ ul {
   min-height: 100vh;
 }
 
-.app-nav-spacer {
+.app-top-spacer {
   padding: calc(var(--nav-height) + 1rem) 0 0;
 }
 
