@@ -243,7 +243,7 @@ ul {
 }
 
 .app-nav-spacer {
-  padding: calc(var(--nav-height) + 0.5rem) 0 0;
+  padding: calc(var(--nav-height) + 1rem) 0 0;
 }
 
 .grid-center {
@@ -269,6 +269,7 @@ ul {
 
 .app-section {
   max-width: var(--section-max-width);
+  padding: 0 1rem;
   place-self: center;
 }
 
