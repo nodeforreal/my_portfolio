@@ -80,7 +80,7 @@ const Wrapper = styled.section`
   }
 
   .projects-showcase {
-    max-width: 992px;
+    max-width: 1080px;
     margin: 3rem auto 0;
     display: flex;
     flex-wrap: wrap;
