@@ -4,6 +4,7 @@ import { AiFillEye } from "react-icons/ai";
 import { SiGithub } from "react-icons/si";
 import { motion, useAnimationControls } from "framer-motion";
 import sanityClient from "../client";
+import React from "react";
 
 const Card = ({ title, description, tag, img, live, repo }) => {
   const liveBtn = useAnimationControls();
@@ -21,6 +22,7 @@ const Card = ({ title, description, tag, img, live, repo }) => {
           src={urlFor(img).width(1440).height(1080).url()}
           alt=""
           className="img"
+          loading="lazy"
         />
         <div className="card-btns">
           <motion.a
@@ -152,4 +154,4 @@ const Wrapper = styled.article`
   }
 `;
 
-export default Card;
+export default React.memo(Card);
