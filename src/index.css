@@ -239,8 +239,8 @@ ul {
 }
 
 .full-page {
-  padding: calc(var(--nav-height) + 0.5rem) 0 0;
   min-height: 100vh;
+  padding: calc(var(--nav-height) + 1rem) 1rem;
 }
 
 .grid-center {
@@ -275,8 +275,8 @@ ul {
   text-align: center;
 }
 
-@media screen and (max-width:760px){
-  .section-bg-img{
+@media screen and (max-width: 760px) {
+  .section-bg-img {
     background-image: none !important;
   }
 }

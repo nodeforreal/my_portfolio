@@ -7,11 +7,11 @@ import designImg from "../assets/images/design.png";
 import frontEndImg from "../assets/images/front-end.png";
 import databaseImg from "../assets/images/database.png";
 import developerBgBlob from "../assets/images/developer-bg-blob.png";
-import heroBackground from '../assets/images/hero-background.png';
+import heroBackground from "../assets/images/hero-background.png";
 
 const Hero = () => {
   return (
-    <Wrapper className="section-grid section-bg-img" id="home">
+    <Wrapper className="full-page section-grid section-bg-img" id="home">
       <SocialMedia />
       <section className="hero-section app-section">
         <motion.div
@@ -67,12 +67,9 @@ const IconCircle = ({ img, className }) => {
 };
 
 const Wrapper = styled.section`
-  min-height: calc(100vh - var(--nav-height));
   background-image: url(${heroBackground});
-  background-repeat:no-repeat;
-  background-size: 100%  auto;
-
-  padding: 2rem 1rem;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   overflow: hidden;
 
   .hero-section {
@@ -145,8 +142,6 @@ const Wrapper = styled.section`
   }
 
   @media screen and (min-width: 1200px) {
-    padding: 0 1.5rem 0 0;
-
     .hero-intro {
       place-items: start;
     }

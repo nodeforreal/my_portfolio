@@ -6,15 +6,16 @@ import { useDispatch } from "react-redux";
 import { sidebarToggle } from "../features/ui/uiSlice";
 
 const NavBar = () => {
-  const dispatch = useDispatch()
-  
+  const dispatch = useDispatch();
+
   return (
     <Wrapper>
       <span className="title">portfolio</span>
       <NavMenu />
       <div className="sidebar-btn-wrapper">
-        <button className="sidebar-btn grid-center" 
-        onClick={()=>dispatch(sidebarToggle())}
+        <button
+          className="sidebar-btn grid-center"
+          onClick={() => dispatch(sidebarToggle())}
         >
           <HiOutlineMenuAlt4 className="icon" />
         </button>
@@ -33,7 +34,7 @@ const Wrapper = styled.nav`
   display: flex;
   align-items: center;
 
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;

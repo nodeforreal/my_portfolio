@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import AnimateAppSection from "./AnimateAppSection";
 import SocialMedia from "./SocialMedia";
-import aboutBackground from '../assets/images/about-background.png'
+import aboutBackground from "../assets/images/about-background.png";
 
 const About = () => {
   return (
@@ -39,7 +39,7 @@ const Wrapper = styled.section`
   background-image: url(${aboutBackground});
   background-repeat: no-repeat;
   background-size: 100% auto;
-  
+
   .about-content {
     max-width: 560px;
     padding: 0 1rem;

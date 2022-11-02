@@ -14,7 +14,7 @@ const uiSlice = createSlice({
     }
   }
 })
-console.log(uiSlice)
+
 export const {sidebarToggle} = uiSlice.actions
 
 export default uiSlice.reducer
