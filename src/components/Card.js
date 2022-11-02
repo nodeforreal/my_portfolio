@@ -53,8 +53,12 @@ const Wrapper = styled.article`
   background-color: var(--secondary);
   cursor: pointer;
 
-  @media screen and (max-width: 992px) {
+  @media (max-width: 992px) and (min-width: 560px) {
     margin: 1rem;
+  }
+
+  @media screen and (max-width: 560px) {
+    margin: 1rem 0;
   }
 
   .project-image {
