@@ -240,10 +240,7 @@ ul {
 
 .full-page {
   min-height: 100vh;
-}
-
-.app-top-spacer {
-  padding: calc(var(--nav-height) + 1rem) 0 0;
+  padding: calc(var(--nav-height) + 1rem) 1rem;
 }
 
 .grid-center {
@@ -269,7 +266,6 @@ ul {
 
 .app-section {
   max-width: var(--section-max-width);
-  padding: 0 1rem;
   place-self: center;
 }
 
