@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import styled from "styled-components";
 import { NavBar, Footer, Sidebar } from "./components";
 import { Home, AllProjects, Error } from "./pages";
 
+import { useDispatch } from "react-redux";
+import { getAllProjects } from "./features/projects/projectsSlice";
+
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllProjects());
+  });
+
   return (
     <Wrapper>
       <NavBar />
