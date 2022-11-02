@@ -9,5 +9,17 @@ import Contact from "./Contact";
 import Sidebar from "./Sidebar";
 
 import TagList from "./TagList";
+import Card from "./Card";
 
-export { NavBar, Footer, Hero, Work, Skill, About, Contact, Sidebar, TagList };
+export {
+  NavBar,
+  Footer,
+  Hero,
+  Work,
+  Skill,
+  About,
+  Contact,
+  Sidebar,
+  TagList,
+  Card,
+};
