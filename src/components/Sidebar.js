@@ -6,16 +6,13 @@ import SidebarMenu from "./SidebarMenu";
 import { IoClose } from "react-icons/io5";
 
 const Sidebar = () => {
-  const dispatch = useDispatch()
-  const {isSidebarOpen} = useSelector((state)=>state.ui)
-  console.log(isSidebarOpen)
+  const dispatch = useDispatch();
+  const { isSidebarOpen } = useSelector((state) => state.ui);
 
   return (
     <Wrapper isSidebarOpen={isSidebarOpen}>
       <div className="close-btn-wrapper">
-        <button className="close-btn"
-        onClick={()=>dispatch(sidebarToggle())}
-        >
+        <button className="close-btn" onClick={() => dispatch(sidebarToggle())}>
           <IoClose className="icon" />
         </button>
       </div>
@@ -30,7 +27,7 @@ const Wrapper = styled.aside`
   width: 80vw;
   height: 100vh;
   position: fixed;
-  right: ${({isSidebarOpen})=>isSidebarOpen ? '0' : '-80vw'};
+  right: ${({ isSidebarOpen }) => (isSidebarOpen ? "0" : "-80vw")};
   top: 0;
   z-index: 200;
   transition: var(--transition);
@@ -45,7 +42,7 @@ const Wrapper = styled.aside`
   .close-btn {
     width: 2rem;
     height: 2rem;
-    
+
     .icon {
       color: var(--secondary);
       width: 2rem;
