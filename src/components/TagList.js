@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { setTag } from "../features/projects/projectsSlice";
@@ -21,11 +20,9 @@ let list = [
 ];
 
 const TagList = ({ className }) => {
-  const location = useLocation();
   const { selectedTag } = useSelector((state) => state.projects);
   const dispatch = useDispatch();
 
-  console.log(location);
   return (
     <Wrapper className={className}>
       {list.map((label, index) => {
