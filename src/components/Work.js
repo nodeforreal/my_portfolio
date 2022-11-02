@@ -20,7 +20,7 @@ const Work = () => {
           _id,
       title,
       tag,
-      "img" : img.asset->url,
+      img,
       description,
       live,
       repo,
