@@ -7,7 +7,7 @@ import designImg from "../assets/images/design.png";
 import frontEndImg from "../assets/images/front-end.png";
 import databaseImg from "../assets/images/database.png";
 import developerBgBlob from "../assets/images/developer-bg-blob.png";
-import heroBackground from '../assets/images/hero-background.png';
+import heroBackground from "../assets/images/hero-background.png";
 
 const Hero = () => {
   return (
@@ -68,11 +68,10 @@ const IconCircle = ({ img, className }) => {
 
 const Wrapper = styled.section`
   min-height: calc(100vh - var(--nav-height));
-  background-image: url(${heroBackground});
-  background-repeat:no-repeat;
-  background-size: 100%  auto;
-
   padding: 2rem 1rem;
+  background-image: url(${heroBackground});
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   overflow: hidden;
 
   .hero-section {
