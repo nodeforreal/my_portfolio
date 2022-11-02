@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { setTag } from "../features/projects/projectsSlice";
 
 let list = [
   "all",
-  "HTML",
+  "html",
   "css",
   "node.js",
-  "react.js",
+  "react",
   "next.js",
   "express",
   "all",
@@ -19,18 +21,19 @@ let list = [
 ];
 
 const TagList = ({ className }) => {
-  const [currentTagList, setTagList] = useState("all");
+  const location = useLocation();
+  const { selectedTag } = useSelector((state) => state.projects);
+  const dispatch = useDispatch();
 
+  console.log(location);
   return (
     <Wrapper className={className}>
       {list.map((label, index) => {
         return (
           <button
             key={`${label}${index}`}
-            onClick={() => setTagList(label)}
-            className={`${
-              label === currentTagList ? "active" : ""
-            } category-btn`}
+            onClick={() => dispatch(setTag(label))}
+            className={`category-btn ${label === selectedTag ? "active" : ""}`}
           >
             {label}
           </button>
