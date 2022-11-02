@@ -1,16 +1,27 @@
 import styled from "styled-components";
+import imageUrlBuilder from "@sanity/image-url";
 import { AiFillEye } from "react-icons/ai";
 import { SiGithub } from "react-icons/si";
 import { motion, useAnimationControls } from "framer-motion";
+import sanityClient from "../client";
 
 const Card = ({ title, description, tag, img, live, repo }) => {
   const liveBtn = useAnimationControls();
   const repoBtn = useAnimationControls();
 
+  const builder = imageUrlBuilder(sanityClient);
+
+  function urlFor(source) {
+    return builder.image(source);
+  }
   return (
     <Wrapper>
       <div className="project-image">
-        <img src={img} alt="" className="img" />
+        <img
+          src={urlFor(img).width(1440).height(1080).url()}
+          alt=""
+          className="img"
+        />
         <div className="card-btns">
           <motion.a
             href={live}
