@@ -20,7 +20,7 @@ const Card = ({ title, description, tag, img, live, repo }) => {
             animate={liveBtn}
             onHoverStart={() => liveBtn.start({ scale: 0.8 })}
             onHoverEnd={() => liveBtn.start({ scale: [0.8, 0.4, 1] })}
-            transition={{duration:0.2}}
+            transition={{ duration: 0.2 }}
           >
             <AiFillEye className="icon" />
           </motion.a>
@@ -32,7 +32,7 @@ const Card = ({ title, description, tag, img, live, repo }) => {
             animate={repoBtn}
             onHoverStart={() => repoBtn.start({ scale: 0.8 })}
             onHoverEnd={() => repoBtn.start({ scale: [0.8, 0.4, 1] })}
-            transition={{duration:0.2}}
+            transition={{ duration: 0.2 }}
           >
             <SiGithub className="icon" />
           </motion.a>
@@ -47,18 +47,17 @@ const Card = ({ title, description, tag, img, live, repo }) => {
 
 const Wrapper = styled.article`
   margin: 2rem;
-  width: 238px;
+  width: 270px;
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: var(--secondary);
   cursor: pointer;
 
-  @media screen and (max-width:992px){
+  @media screen and (max-width: 992px) {
     margin: 1rem;
   }
-  
+
   .project-image {
-    height: 170px;
     width: 100%;
     position: relative;
 
