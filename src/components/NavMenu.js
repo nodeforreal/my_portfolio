@@ -1,20 +1,17 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import styled from "styled-components";
 import { navLinks } from "../utils/constants";
 
 const NavMenu = (props) => {
-  const location = useLocation();
-  console.log(location);
-
   return (
     <Wrapper {...props}>
       {navLinks.map(({ label, value, id }) => {
         return (
           <li key={id}>
-            <a className="link" href={value}>
+            <Link className="link" to={`/${value}`}>
               {label}
-            </a>
+            </Link>
           </li>
         );
       })}

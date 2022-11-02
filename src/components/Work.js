@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
@@ -33,8 +33,9 @@ const Work = () => {
         </motion.div>
         <div className="btn-wrapper">
           <Link
-            to="all-projects"
+            to="/all-projects"
             className="btn secondary-btn all-projects-btn"
+            onClick={() => window.scrollTo({ top: 0 })}
           >
             view all <FiArrowRight className="icon" />
           </Link>
