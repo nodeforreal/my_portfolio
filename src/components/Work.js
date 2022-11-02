@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import {useSelector} from 'react-redux';t {useSelector} from 'react-redux';mpor
+import { useSelector } from "react-redux";
 import TagList from "./TagList";
 import Card from "./Card";
 import SocialMedia from "./SocialMedia";
@@ -10,10 +10,9 @@ import AnimateAppSection from "./AnimateAppSection";
 import { FiArrowRight } from "react-icons/fi";
 
 const Work = () => {
-    {,isLconst Work = () => {
-  const {projects, isLoading} = useSelector((state)=>state.projects)
-  
-  if (isLoading){adig} = ueSelec(statestate.projects)
+  const { projects, isLoading } = useSelector((state) => state.projects);
+
+  if (isLoading) {
     return null;
   }
 
