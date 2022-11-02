@@ -94,7 +94,10 @@ const Wrapper = styled.section`
   }
 
   .all-projects-btn {
+    display: flex;
     margin: 1.5rem auto;
+    align-content: center;
+    column-gap: 0.6rem;
   }
 `;
 
