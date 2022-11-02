@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import Categories from "./Categories";
+import TagList from "./TagList";
 import Card from "./Card";
 import SocialMedia from "./SocialMedia";
 import AnimateAppSection from "./AnimateAppSection";
@@ -49,7 +49,7 @@ const Work = () => {
       <SocialMedia />
       <AnimateAppSection className="work-section app-section">
         <h2 className="app-section-title">Portfolio</h2>
-        <Categories className="categories-wrapper" />
+        <TagList className="categories-wrapper" />
         <motion.div
           className="projects-showcase"
           initial={{ top: 100 }}
