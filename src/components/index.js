@@ -8,4 +8,18 @@ import About from "./About";
 import Contact from "./Contact";
 import Sidebar from "./Sidebar";
 
-export { NavBar, Footer, Hero, Work, Skill, About, Contact, Sidebar };
+import TagList from "./TagList";
+import Card from "./Card";
+
+export {
+  NavBar,
+  Footer,
+  Hero,
+  Work,
+  Skill,
+  About,
+  Contact,
+  Sidebar,
+  TagList,
+  Card,
+};

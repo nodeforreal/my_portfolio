@@ -1,46 +1,18 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { HashLink as Link } from "react-router-hash-link";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import Categories from "./Categories";
+import { useSelector } from "react-redux";
+import TagList from "./TagList";
 import Card from "./Card";
 import SocialMedia from "./SocialMedia";
 import AnimateAppSection from "./AnimateAppSection";
 import { FiArrowRight } from "react-icons/fi";
-import { useState } from "react";
-import sanityClient from "../client";
 
 const Work = () => {
-  const [projects, setProjects] = useState(null);
+  const { projects, isLoading } = useSelector((state) => state.projects);
 
-  const fetchProjects = async () => {
-    sanityClient
-      .fetch(
-        `*[_type == "projects"]{
-          _id,
-      title,
-      tag,
-      "img" : img.asset->url,
-      description,
-      live,
-      repo,
-      tags
-    }
-    `
-      )
-      .then((data) => {
-        setProjects(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
-  useEffect(() => {
-    fetchProjects();
-  }, []);
-
-  if (!projects) {
+  if (isLoading) {
     return null;
   }
 
@@ -49,20 +21,21 @@ const Work = () => {
       <SocialMedia />
       <AnimateAppSection className="work-section app-section">
         <h2 className="app-section-title">Portfolio</h2>
-        <Categories className="categories-wrapper" />
+        <TagList className="categories-wrapper" />
         <motion.div
           className="projects-showcase"
           initial={{ top: 100 }}
           whileInView={{ top: 0 }}
         >
-          {projects.map((card) => {
+          {projects.slice(0, 4).map((card) => {
             return <Card key={card._id} {...card} />;
           })}
         </motion.div>
         <div className="btn-wrapper">
           <Link
-            to="all-projects"
+            to="/all-projects"
             className="btn secondary-btn all-projects-btn"
+            onClick={() => window.scrollTo({ top: 0 })}
           >
             view all <FiArrowRight className="icon" />
           </Link>
@@ -80,7 +53,7 @@ const Wrapper = styled.section`
   }
 
   .projects-showcase {
-    max-width: 992px;
+    max-width: 1080px;
     margin: 3rem auto 0;
     display: flex;
     flex-wrap: wrap;
@@ -94,7 +67,10 @@ const Wrapper = styled.section`
   }
 
   .all-projects-btn {
+    display: flex;
     margin: 1.5rem auto;
+    align-content: center;
+    column-gap: 0.6rem;
   }
 `;
 

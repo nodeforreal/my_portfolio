@@ -1,4 +1,5 @@
 import React from "react";
+import { HashLink as Link } from "react-router-hash-link";
 import styled from "styled-components";
 import { navLinks } from "../utils/constants";
 
@@ -8,9 +9,9 @@ const NavMenu = (props) => {
       {navLinks.map(({ label, value, id }) => {
         return (
           <li key={id}>
-            <a className="link" href={value}>
+            <Link className="link" to={`/${value}`}>
               {label}
-            </a>
+            </Link>
           </li>
         );
       })}

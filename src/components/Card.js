@@ -1,16 +1,29 @@
 import styled from "styled-components";
+import imageUrlBuilder from "@sanity/image-url";
 import { AiFillEye } from "react-icons/ai";
 import { SiGithub } from "react-icons/si";
 import { motion, useAnimationControls } from "framer-motion";
+import sanityClient from "../client";
+import React from "react";
 
 const Card = ({ title, description, tag, img, live, repo }) => {
   const liveBtn = useAnimationControls();
   const repoBtn = useAnimationControls();
 
+  const builder = imageUrlBuilder(sanityClient);
+
+  function urlFor(source) {
+    return builder.image(source);
+  }
   return (
     <Wrapper>
       <div className="project-image">
-        <img src={img} alt="" className="img" />
+        <img
+          src={urlFor(img).width(1440).height(1080).url()}
+          alt=""
+          className="img"
+          loading="lazy"
+        />
         <div className="card-btns">
           <motion.a
             href={live}
@@ -20,7 +33,7 @@ const Card = ({ title, description, tag, img, live, repo }) => {
             animate={liveBtn}
             onHoverStart={() => liveBtn.start({ scale: 0.8 })}
             onHoverEnd={() => liveBtn.start({ scale: [0.8, 0.4, 1] })}
-            transition={{duration:0.2}}
+            transition={{ duration: 0.2 }}
           >
             <AiFillEye className="icon" />
           </motion.a>
@@ -32,7 +45,7 @@ const Card = ({ title, description, tag, img, live, repo }) => {
             animate={repoBtn}
             onHoverStart={() => repoBtn.start({ scale: 0.8 })}
             onHoverEnd={() => repoBtn.start({ scale: [0.8, 0.4, 1] })}
-            transition={{duration:0.2}}
+            transition={{ duration: 0.2 }}
           >
             <SiGithub className="icon" />
           </motion.a>
@@ -47,18 +60,21 @@ const Card = ({ title, description, tag, img, live, repo }) => {
 
 const Wrapper = styled.article`
   margin: 2rem;
-  width: 238px;
+  width: 270px;
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: var(--secondary);
   cursor: pointer;
 
-  @media screen and (max-width:992px){
+  @media (max-width: 992px) and (min-width: 560px) {
     margin: 1rem;
   }
-  
+
+  @media screen and (max-width: 560px) {
+    margin: 1rem 0;
+  }
+
   .project-image {
-    height: 170px;
     width: 100%;
     position: relative;
 
@@ -138,4 +154,4 @@ const Wrapper = styled.article`
   }
 `;
 
-export default Card;
+export default React.memo(Card);

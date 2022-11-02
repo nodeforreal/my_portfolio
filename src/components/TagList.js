@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { setTag } from "../features/projects/projectsSlice";
+
 let list = [
   "all",
-  "HTML",
+  "html",
   "css",
   "node.js",
-  "react.js",
+  "react",
   "next.js",
   "express",
   "all",
@@ -17,19 +19,18 @@ let list = [
   "express",
 ];
 
-const Categories = ({className}) => {
-  const [currentCategory, setCurrentCategory] = useState("all");
+const TagList = ({ className }) => {
+  const { selectedTag } = useSelector((state) => state.projects);
+  const dispatch = useDispatch();
 
   return (
     <Wrapper className={className}>
       {list.map((label, index) => {
         return (
           <button
-          key={`${label}${index}`}
-            onClick={() => setCurrentCategory(label)}
-            className={`${
-              label === currentCategory ? "active" : ""
-            } category-btn`}
+            key={`${label}${index}`}
+            onClick={() => dispatch(setTag(label))}
+            className={`category-btn ${label === selectedTag ? "active" : ""}`}
           >
             {label}
           </button>
@@ -41,6 +42,7 @@ const Categories = ({className}) => {
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 
@@ -65,4 +67,4 @@ const Wrapper = styled.div`
     color: var(--primary);
   }
 `;
-export default Categories;
+export default TagList;
