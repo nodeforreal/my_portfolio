@@ -40,13 +40,10 @@ const projectsSlice = createSlice({
   name: "projectSlice",
   initialState,
   reducers: {
-    fetchProjects: (state, { payload }) => {
-      state.projects = payload;
-      state.tempProjects = payload;
-    },
     setTag: (state, { payload }) => {
       state.selectedTag = payload;
       state.tempProjects = state.projects.filter((project) => {
+        if (payload === "all") return true;
         const { tags } = project;
         return tags.includes(payload);
       });
@@ -67,6 +64,6 @@ const projectsSlice = createSlice({
   },
 });
 
-export const { fetchProjects, setTag } = projectsSlice;
+export const { setTag } = projectsSlice.actions;
 
 export default projectsSlice.reducer;
