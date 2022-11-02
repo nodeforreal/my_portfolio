@@ -7,40 +7,11 @@ import Card from "./Card";
 import SocialMedia from "./SocialMedia";
 import AnimateAppSection from "./AnimateAppSection";
 import { FiArrowRight } from "react-icons/fi";
-import { useState } from "react";
-import sanityClient from "../client";
+
+const projects = [];
 
 const Work = () => {
-  const [projects, setProjects] = useState(null);
-
-  const fetchProjects = async () => {
-    sanityClient
-      .fetch(
-        `*[_type == "projects"]{
-          _id,
-      title,
-      tag,
-      img,
-      description,
-      live,
-      repo,
-      tags
-    }
-    `
-      )
-      .then((data) => {
-        setProjects(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
-  useEffect(() => {
-    fetchProjects();
-  }, []);
-
-  if (!projects) {
+  if (true) {
     return null;
   }
 
