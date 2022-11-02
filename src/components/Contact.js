@@ -40,6 +40,7 @@ const ContactCard = ({ icon, label, directTo }) => {
 };
 
 const Wrapper = styled.section`
+  padding: 1rem;
   background-color: var(--white);
   background-image: url(${contactBackground});
   background-repeat: no-repeat;
@@ -84,7 +85,6 @@ const Wrapper = styled.section`
   @media screen and (max-width: 992px) {
     .contact-cards {
       max-width: 460px;
-      padding: 1rem;
       grid-template-columns: 1fr;
     }
   }
