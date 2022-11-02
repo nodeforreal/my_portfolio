@@ -1,17 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import {useSelector} from 'react-redux';t {useSelector} from 'react-redux';mpor
 import TagList from "./TagList";
 import Card from "./Card";
 import SocialMedia from "./SocialMedia";
 import AnimateAppSection from "./AnimateAppSection";
 import { FiArrowRight } from "react-icons/fi";
 
-const projects = [];
-
 const Work = () => {
-  if (true) {
+    {,isLconst Work = () => {
+  const {projects, isLoading} = useSelector((state)=>state.projects)
+  
+  if (isLoading){adig} = ueSelec(statestate.projects)
     return null;
   }
 
