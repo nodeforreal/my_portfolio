@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { SiGithub } from "react-icons/si";
 import { RiLinkedinFill } from "react-icons/ri";
 
-const SocialMedia = ({className}) => {
+const SocialMedia = ({ className }) => {
   return (
     <Wrapper className={className}>
       <a
@@ -27,8 +27,7 @@ const SocialMedia = ({className}) => {
 };
 
 const Wrapper = styled.div`
-  height: 100%;
-  padding: 0 1rem;
+  height: calc(100vh - var(--nav-height));
   display: flex;
   row-gap: 0.8rem;
   flex-direction: column;
@@ -38,7 +37,7 @@ const Wrapper = styled.div`
   @media screen and (max-width: 760px) {
     display: none;
   }
-  
+
   .link {
     width: 2.4rem;
     height: 2.4rem;
