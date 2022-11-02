@@ -1,8 +1,12 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { navLinks } from "../utils/constants";
 
 const NavMenu = (props) => {
+  const location = useLocation();
+  console.log(location);
+
   return (
     <Wrapper {...props}>
       {navLinks.map(({ label, value, id }) => {
