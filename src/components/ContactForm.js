@@ -78,7 +78,6 @@ const ContactForm = () => {
 const Wrapper = styled.form`
   margin: 3rem 0;
   max-width: 560px;
-  padding: 0 1rem;
 
   .label {
     font-size: var(--small-text);
