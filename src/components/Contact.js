@@ -8,7 +8,7 @@ import contactBackground from "../assets/images/contact-background.png";
 
 const Contact = () => {
   return (
-    <Wrapper className="full-page section-grid section-bg-img" id="contact">
+    <Wrapper className="section-grid section-bg-img full-page" id="contact">
       <SocialMedia />
       <AnimateAppSection className="app-section">
         <h2 className="app-section-title">Take a coffee & chat with me</h2>
@@ -40,14 +40,13 @@ const ContactCard = ({ icon, label, directTo }) => {
 };
 
 const Wrapper = styled.section`
-  padding: 1rem;
   background-color: var(--white);
   background-image: url(${contactBackground});
   background-repeat: no-repeat;
   background-size: 100% auto;
 
   .contact-cards {
-    max-width: 590px;
+    max-width: 690px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
