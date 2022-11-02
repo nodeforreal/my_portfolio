@@ -94,6 +94,7 @@ const Wrapper = styled.form`
     background-color: #edf2f8;
     font-size: var(--small-text);
     display: block;
+
     &:focus {
       outline: none;
     }
