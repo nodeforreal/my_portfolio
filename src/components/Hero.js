@@ -11,9 +11,9 @@ import heroBackground from "../assets/images/hero-background.png";
 
 const Hero = () => {
   return (
-    <Wrapper className="section-grid section-bg-img" id="home">
+    <Wrapper className="full-page section-grid section-bg-img" id="home">
       <SocialMedia />
-      <section className="hero-section app-section app-nav-spacer">
+      <section className="hero-section app-section">
         <motion.div
           className="hero-intro"
           initial={{ left: "-40%" }}
@@ -67,7 +67,6 @@ const IconCircle = ({ img, className }) => {
 };
 
 const Wrapper = styled.section`
-  min-height: calc(100vh - var(--nav-height));
   background-image: url(${heroBackground});
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -143,8 +142,6 @@ const Wrapper = styled.section`
   }
 
   @media screen and (min-width: 1200px) {
-    padding: 0 1.5rem 0 0;
-
     .hero-intro {
       place-items: start;
     }
