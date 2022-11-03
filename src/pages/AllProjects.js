@@ -19,6 +19,8 @@ const AllProjects = () => {
 };
 
 const Wrapper = styled.section`
+  background-color: var(--white);
+  
   .project-cards {
     margin-top: 2rem;
     display: flex;
