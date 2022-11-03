@@ -1,23 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { setTag } from "../features/projects/projectsSlice";
-
-let list = [
-  "all",
-  "html",
-  "css",
-  "node.js",
-  "react",
-  "next.js",
-  "express",
-  "all",
-  "HTML",
-  "css",
-  "node.js",
-  "react.js",
-  "next.js",
-  "express",
-];
+import { tagFilterList } from "../utils/constants";
 
 const TagList = ({ className }) => {
   const { selectedTag } = useSelector((state) => state.projects);
@@ -25,12 +9,12 @@ const TagList = ({ className }) => {
 
   return (
     <Wrapper className={className}>
-      {list.map((label, index) => {
+      {tagFilterList.map(({ label, value }, index) => {
         return (
           <button
             key={`${label}${index}`}
-            onClick={() => dispatch(setTag(label))}
-            className={`category-btn ${label === selectedTag ? "active" : ""}`}
+            onClick={() => dispatch(setTag(value))}
+            className={`category-btn ${value === selectedTag ? "active" : ""}`}
           >
             {label}
           </button>
@@ -41,8 +25,9 @@ const TagList = ({ className }) => {
 };
 
 const Wrapper = styled.div`
+  max-width: 1080px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 
@@ -54,7 +39,7 @@ const Wrapper = styled.div`
     font-weight: 600;
     color: var(--secondary);
     transition: var(--transition);
-    text-transform: capitalize;
+    text-transform: none;
   }
 
   .category-btn:hover {
