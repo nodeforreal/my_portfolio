@@ -80,6 +80,7 @@ const Wrapper = styled.section`
   }
 
   .hero-intro {
+    padding-left: 0;
     display: grid;
     place-content: center;
     place-items: center;
@@ -143,6 +144,7 @@ const Wrapper = styled.section`
 
   @media screen and (min-width: 1200px) {
     .hero-intro {
+      padding-left: 1rem;
       place-items: start;
     }
 
