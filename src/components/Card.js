@@ -9,7 +9,6 @@ import React from "react";
 const Card = ({ title, description, tag, img, live, repo }) => {
   const liveBtn = useAnimationControls();
   const repoBtn = useAnimationControls();
-
   const builder = imageUrlBuilder(sanityClient);
 
   function urlFor(source) {
