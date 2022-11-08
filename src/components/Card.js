@@ -14,7 +14,7 @@ const Card = ({ title, description, tag, img, live, repo }) => {
   function urlFor(source) {
     return builder.image(source);
   }
-  
+
   return (
     <Wrapper>
       <div className="project-image">
@@ -86,7 +86,7 @@ const Wrapper = styled.article`
 
   .card-btns {
     width: 100%;
-    height: 100%;
+    height: calc(100% + 0.0625rem);
     border-radius: 0.5rem;
     background-color: rgba(0, 0, 0, 0.5);
 
