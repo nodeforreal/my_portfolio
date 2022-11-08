@@ -14,11 +14,12 @@ const Card = ({ title, description, tag, img, live, repo }) => {
   function urlFor(source) {
     return builder.image(source);
   }
+  
   return (
     <Wrapper>
       <div className="project-image">
         <img
-          src={urlFor(img).width(1440).height(1080).url()}
+          src={urlFor(img).width(1440).height(1024).url()}
           alt=""
           className="img"
           loading="lazy"
