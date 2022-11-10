@@ -6,9 +6,10 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import projects from "./projects";
 import resume from "./resume";
+import filterTags from "./filterTags";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   name: "default",
-  types: schemaTypes.concat([projects, resume]),
+  types: schemaTypes.concat([projects, resume, filterTags]),
 });
