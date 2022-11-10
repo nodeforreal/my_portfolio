@@ -23,7 +23,7 @@ const Work = () => {
         <h2 className="app-section-title">Portfolio</h2>
         <TagList className="categories-wrapper" />
         <motion.div
-          className="projects-showcase"
+          className="project-cards"
           initial={{ top: 100 }}
           whileInView={{ top: 0 }}
         >
@@ -52,7 +52,7 @@ const Wrapper = styled.section`
     padding: 0 1rem;
   }
 
-  .projects-showcase {
+  .project-cards {
     max-width: 1080px;
     margin: 3rem auto 0;
     display: flex;
