@@ -1,10 +1,10 @@
+import React from "react";
 import styled from "styled-components";
 import imageUrlBuilder from "@sanity/image-url";
 import { AiFillEye } from "react-icons/ai";
 import { SiGithub } from "react-icons/si";
 import { motion, useAnimationControls } from "framer-motion";
 import sanityClient from "../client";
-import React from "react";
 
 const Card = ({ title, description, tag, img, live, repo }) => {
   const liveBtn = useAnimationControls();
