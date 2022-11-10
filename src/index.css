@@ -218,7 +218,8 @@ ul {
 .primary-btn:hover.primary-btn::after {
   right: 1rem;
 }
-/* secondary */
+
+/* secondary btn*/
 .secondary-btn {
   background-color: transparent;
   border: solid 0.0625rem var(--secondary);
@@ -273,6 +274,10 @@ ul {
   margin-bottom: 2rem;
   text-shadow: var(--text-shadow);
   text-align: center;
+}
+
+.section {
+  max-width: var(--section-max-width);
 }
 
 @media screen and (max-width: 760px) {
