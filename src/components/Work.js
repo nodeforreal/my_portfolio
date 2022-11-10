@@ -1,13 +1,12 @@
 import React from "react";
 import { HashLink as Link } from "react-router-hash-link";
-import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import TagList from "./TagList";
-import Card from "./Card";
 import SocialMedia from "./SocialMedia";
 import AnimateAppSection from "./AnimateAppSection";
 import { FiArrowRight } from "react-icons/fi";
+import ProjectCards from "./ProjectCards";
 
 const Work = () => {
   const { tempProjects, isLoading } = useSelector((state) => state.projects);
@@ -22,15 +21,7 @@ const Work = () => {
       <AnimateAppSection className="work-section app-section">
         <h2 className="app-section-title">Portfolio</h2>
         <TagList className="categories-wrapper" />
-        <motion.div
-          className="project-cards"
-          initial={{ top: 100 }}
-          whileInView={{ top: 0 }}
-        >
-          {tempProjects.slice(0, 4).map((card) => {
-            return <Card key={card._id} {...card} />;
-          })}
-        </motion.div>
+        <ProjectCards projects={tempProjects} cardCount={4} />
         <div className="btn-wrapper">
           <Link
             to="/all-projects"
@@ -50,16 +41,6 @@ const Wrapper = styled.section`
 
   .categories-wrapper {
     padding: 0 1rem;
-  }
-
-  .project-cards {
-    max-width: 1080px;
-    margin: 3rem auto 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    position: relative;
   }
 
   .btn-wrapper {

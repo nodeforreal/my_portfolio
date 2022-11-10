@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { TagList, Card } from "../components";
+import ProjectCards from "../components/ProjectCards";
 
 const AllProjects = () => {
   const { tempProjects } = useSelector((state) => state.projects);
@@ -9,11 +10,7 @@ const AllProjects = () => {
     <Wrapper className="full-page">
       <h2 className="text-center app-section-title">all projects</h2>
       <TagList />
-      <section className="project-cards section">
-        {tempProjects.map((project) => {
-          return <Card key={project._id} {...project} />;
-        })}
-      </section>
+      <ProjectCards projects={tempProjects} cardCount={tempProjects.length} />
     </Wrapper>
   );
 };

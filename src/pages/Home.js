@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Hero , Work, Skill, About, Contact} from '../components'
+import React from "react";
+import styled from "styled-components";
+import { Hero, Work, Skill, About, Contact } from "../components";
 
 const Home = () => {
   return (
@@ -11,9 +11,8 @@ const Home = () => {
       <About />
       <Contact />
     </Wrapper>
-  )
-}
+  );
+};
 
-const Wrapper = styled.section`
-`
-export default Home
+const Wrapper = styled.section``;
+export default Home;

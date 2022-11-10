@@ -10,6 +10,7 @@ const TagList = ({ className }) => {
   const [filterTags, setFilterTags] = useState(loaderFiltetTags);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     sanityClient
       .fetch(`*[_type == "filterTags"] | order(_createdAt desc)`)

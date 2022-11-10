@@ -19,7 +19,7 @@ const Card = ({ title, description, tag, img, live, repo }) => {
     <Wrapper>
       <div className="project-image">
         <img
-          src={urlFor(img).width(1440).height(1024).url()}
+          src={urlFor(img).width(1080).height(760).url()}
           alt=""
           className="img"
           loading="lazy"
@@ -154,4 +154,4 @@ const Wrapper = styled.article`
   }
 `;
 
-export default React.memo(Card);
+export default Card;
