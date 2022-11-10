@@ -1,5 +1,5 @@
 export default {
-  name: "Resume",
+  name: "resume",
   type: "document",
   title: "Resume",
   fields: [
