@@ -1,15 +1,26 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
 import { setTag } from "../features/projects/projectsSlice";
-import { tagFilterList } from "../utils/constants";
+import sanityClient from "../client";
+import { filterTags as loaderFiltetTags } from "../utils/constants";
 
 const TagList = ({ className }) => {
   const { selectedTag } = useSelector((state) => state.projects);
+  const [filterTags, setFilterTags] = useState(loaderFiltetTags);
+
   const dispatch = useDispatch();
+  useEffect(() => {
+    sanityClient
+      .fetch(`*[_type == "filterTags"] | order(_createdAt desc)`)
+      .then((tags) => {
+        setFilterTags(tags);
+      });
+  }, []);
 
   return (
     <Wrapper className={className}>
-      {tagFilterList.map(({ label, value }, index) => {
+      {filterTags.map(({ label, value }, index) => {
         return (
           <button
             key={`${label}${index}`}
