@@ -10,7 +10,7 @@ import AnimateAppSection from "./AnimateAppSection";
 import { FiArrowRight } from "react-icons/fi";
 
 const Work = () => {
-  const { projects, isLoading } = useSelector((state) => state.projects);
+  const { tempProjects, isLoading } = useSelector((state) => state.projects);
 
   if (isLoading) {
     return null;
@@ -27,7 +27,7 @@ const Work = () => {
           initial={{ top: 100 }}
           whileInView={{ top: 0 }}
         >
-          {projects.slice(0, 4).map((card) => {
+          {tempProjects.slice(0, 4).map((card) => {
             return <Card key={card._id} {...card} />;
           })}
         </motion.div>
