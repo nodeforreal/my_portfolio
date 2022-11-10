@@ -9,7 +9,7 @@ const AllProjects = () => {
     <Wrapper className="full-page">
       <h2 className="text-center app-section-title">all projects</h2>
       <TagList />
-      <section className="project-cards">
+      <section className="project-cards section">
         {tempProjects.map((project) => {
           return <Card key={project._id} {...project} />;
         })}
@@ -20,7 +20,7 @@ const AllProjects = () => {
 
 const Wrapper = styled.section`
   background-color: var(--white);
-  
+
   .project-cards {
     margin-top: 2rem;
     display: flex;
