@@ -35,15 +35,19 @@ export const tagFilterList = [
   },
   {
     label: "Javascript",
-    value: "javscript",
+    value: "javascript",
   },
   {
     label: "React.js",
-    value: "react.js",
+    value: "react",
   },
   {
     label: "Node.js",
-    value: "node.js",
+    value: "node",
+  },
+  {
+    label: "Express.js",
+    value: "express",
   },
   {
     label: "MongoDB",
