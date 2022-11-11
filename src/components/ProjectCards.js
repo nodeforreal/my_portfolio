@@ -1,19 +1,27 @@
+import { motion, useAnimationControls } from "framer-motion";
+import { useEffect } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import Card from "./Card";
 
 const ProjectCards = ({ projects, cardCount }) => {
+  const controls = useAnimationControls();
+
+  useEffect(() => {
+    controls.start({ top: [0, 200, 0], opacity: [1, 0, 1] });
+  });
+
   return (
     <Wrapper
-      style={{ position: "relative" }}
       initial={{ top: 100 }}
-      animate={{ top: 0, opacity: 1 }}
-      // whileInView={{ top: 0 }}
-      exit={{ top: 100, opacity: 0 }}
+      style={{ position: "relative" }}
+      animate={controls}
+      whileInView={{ top: 0 }}
     >
-      {projects.slice(0, cardCount).map((card) => {
-        return <Card key={card._id} {...card} />;
-      })}
+      {projects
+        .slice(0, cardCount === "all" ? projects.length : cardCount)
+        .map((card) => {
+          return <Card key={card._id} {...card} />;
+        })}
     </Wrapper>
   );
 };

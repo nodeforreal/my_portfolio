@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HashLink as Link } from "react-router-hash-link";
+import { motion, useAnimationControls } from "framer-motion";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import TagList from "./TagList";
@@ -21,7 +22,9 @@ const Work = () => {
       <AnimateAppSection className="work-section app-section">
         <h2 className="app-section-title">Portfolio</h2>
         <TagList className="categories-wrapper" />
-        <ProjectCards projects={tempProjects} cardCount={4} />
+
+          <ProjectCards projects={tempProjects} cardCount={4} />
+  
         <div className="btn-wrapper">
           <Link
             to="/all-projects"

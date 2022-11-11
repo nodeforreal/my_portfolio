@@ -76,6 +76,7 @@ const Wrapper = styled.article`
 
   .project-image {
     width: 100%;
+    height: 170px;
     position: relative;
 
     img {
@@ -86,7 +87,7 @@ const Wrapper = styled.article`
 
   .card-btns {
     width: 100%;
-    height: calc(100% + 0.0625rem);
+    height: 100%;
     border-radius: 0.5rem;
     background-color: rgba(0, 0, 0, 0.5);
 
@@ -101,8 +102,12 @@ const Wrapper = styled.article`
     opacity: 0;
     transition: all 0.3s linear;
   }
+
   .card-btns:hover {
     opacity: 1;
+    .card-btn {
+      display: grid;
+    }
   }
 
   .card-btn {
@@ -111,7 +116,7 @@ const Wrapper = styled.article`
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 100%;
 
-    display: grid;
+    display: none;
     place-content: center;
 
     transition: all 0.3s ease-out;

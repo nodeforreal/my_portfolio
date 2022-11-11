@@ -25,7 +25,9 @@ const TagList = ({ className }) => {
         return (
           <button
             key={`${label}${index}`}
-            onClick={() => dispatch(setTag(value))}
+            onClick={() => {
+              dispatch(setTag(value));
+            }}
             className={`category-btn ${value === selectedTag ? "active" : ""}`}
           >
             {label}
