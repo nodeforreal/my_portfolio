@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AnimateAppSection from "./AnimateAppSection";
 import SocialMedia from "./SocialMedia";
 import aboutBackground from "../assets/images/about-background.png";
+import sanityClint from "../client";
 
 const About = () => {
+  const [pdfURL, setPdfURL] = useState("");
+  useEffect(() => {
+    sanityClint
+      .fetch(`*[_type=="resume"]{"pdfURL":resume.asset->url}[0]`)
+      .then((res) => {
+        setPdfURL(res.pdfURL);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <Wrapper className="full-page section-grid section-bg-img" id="about">
       <SocialMedia />
@@ -27,7 +40,9 @@ const About = () => {
           </p>
         </section>
         <div className="download-btn-wrapper">
-          <button className="btn primary-btn">Download CV</button>
+          <a href={`${pdfURL}?dl=`} className="btn primary-btn download-btn">
+            Download CV
+          </a>
         </div>
       </AnimateAppSection>
     </Wrapper>
@@ -51,7 +66,7 @@ const Wrapper = styled.section`
 
   .download-btn-wrapper {
     display: flex;
-    button {
+    .download-btn {
       margin: 2rem auto;
     }
   }

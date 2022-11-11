@@ -12,7 +12,7 @@ import { GrNode } from "react-icons/gr";
 import { FaSass, FaFigma, FaReact } from "react-icons/fa";
 import { DiMongodb } from "react-icons/di";
 
-export const tagFilterList = [
+export const filterTags = [
   {
     label: "Front-end",
     value: "front-end",
@@ -35,15 +35,19 @@ export const tagFilterList = [
   },
   {
     label: "Javascript",
-    value: "javscript",
+    value: "javascript",
   },
   {
     label: "React.js",
-    value: "react.js",
+    value: "react",
   },
   {
     label: "Node.js",
-    value: "node.js",
+    value: "node",
+  },
+  {
+    label: "Express.js",
+    value: "express",
   },
   {
     label: "MongoDB",
