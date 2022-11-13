@@ -15,7 +15,7 @@ const SocialMedia = ({ className }) => {
         <SiGithub className="icon" />
       </a>
       <a
-        href="https://github.com/keeforever"
+        href="https://www.linkedin.com/in/kaliyamoorthyt"
         className="link"
         target="_blank"
         rel="noreferrer"
