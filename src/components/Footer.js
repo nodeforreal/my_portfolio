@@ -4,8 +4,6 @@ import styled from "styled-components";
 const Footer = () => {
   return (
     <Wrapper>
-
-    
       <p>@2022 KALIYAMOORTHY T</p>
       <p>ALL RIGHTS RESERVED</p>
     </Wrapper>
