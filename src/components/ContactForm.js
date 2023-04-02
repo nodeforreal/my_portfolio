@@ -92,8 +92,11 @@ const Wrapper = styled.form`
     border: none;
     border-radius: var(--borderRadius);
     background-color: #edf2f8;
+    
     font-size: var(--small-text);
     display: block;
+    
+    resize: none;
 
     &:focus {
       outline: none;
