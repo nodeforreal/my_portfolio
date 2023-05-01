@@ -40,6 +40,7 @@ const Hero = () => {
               initial={{ translateX: "-50%", translateY: "-50%", scale: 0 }}
               whileInView={{ translateX: "-50%", translateY: "-50%", scale: 1 }}
               transition={{ duration: 0.5 }}
+              draggable="false"
             />
           </div>
           <motion.div
@@ -61,7 +62,7 @@ const Hero = () => {
 const IconCircle = ({ img, className }) => {
   return (
     <span className={`${className} grid-center circle`}>
-      <img src={img} alt="" />
+      <img src={img} alt="" draggable="false" />
     </span>
   );
 };
