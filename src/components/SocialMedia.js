@@ -16,9 +16,8 @@ const SocialMedia = ({ className }) => {
         <SiGithub className="icon" />
       </a>
       <a
-        href="https://www.linkedin.com/in/kaliyamoorthyt"
+        href="/not-available"
         className="link"
-        target="_blank"
         rel="noreferrer"
       >
         <RiLinkedinFill className="icon" />
