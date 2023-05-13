@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { SiGithub } from "react-icons/si";
 import { RiLinkedinFill } from "react-icons/ri";
+import { FaTelegramPlane } from 'react-icons/fa'
 
 const SocialMedia = ({ className }) => {
   return (
@@ -21,6 +22,14 @@ const SocialMedia = ({ className }) => {
         rel="noreferrer"
       >
         <RiLinkedinFill className="icon" />
+      </a>
+      <a
+        href="https://t.me/keeforever"
+        className="link"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FaTelegramPlane className="icon" />
       </a>
     </Wrapper>
   );
