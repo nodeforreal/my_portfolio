@@ -10,7 +10,7 @@ const NavBar = () => {
 
   return (
     <Wrapper>
-      <a href="#home" className="title">portfolio</a>
+      <a href="/#home" className="title">portfolio</a>
       <NavMenu />
       <div className="sidebar-btn-wrapper">
         <button
