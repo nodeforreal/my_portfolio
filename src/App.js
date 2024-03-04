@@ -8,7 +8,7 @@ import { Home, AllProjects, Error } from "./pages";
 import { useDispatch } from "react-redux";
 import { getAllProjects } from "./features/projects/projectsSlice";
 
-import { socket } from '../socket';
+import { socket } from './socket';
 
 
 const App = () => {
