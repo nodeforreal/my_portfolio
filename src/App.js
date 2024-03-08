@@ -14,17 +14,25 @@ import { socket } from './socket';
 const App = () => {
   const dispatch = useDispatch();
 
-  const location = useLocation()
-
   useEffect(() => {
     dispatch(getAllProjects());
-  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
 
-  // visitor
-  useEffect(() => {
-    socket.emit("visitor", `${navigator.userAgent} ${JSON.stringify(location)}`)
-  }, [location])
 
+  // track visitor
+  useEffect(()=>{
+    const trackVisitor = (event)=>{
+      socket.emit("visitor", `${navigator.userAgent} ${window.location.href}`)
+    }
+
+    // click event
+    window.addEventListener("click", trackVisitor)
+
+    return ()=>{
+      window.removeEventListener("click", trackVisitor)
+    }
+  },[])
 
   return (
     <Wrapper>
