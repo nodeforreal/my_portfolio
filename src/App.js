@@ -7,8 +7,7 @@ import { Home, AllProjects, Error } from "./pages";
 
 import { useDispatch } from "react-redux";
 import { getAllProjects } from "./features/projects/projectsSlice";
-
-import { socket } from './socket';
+import TrackVisitor from "./components/TrackVisitor";
 
 
 const App = () => {
@@ -20,19 +19,7 @@ const App = () => {
   },[]);
 
 
-  // track visitor
-  useEffect(()=>{
-    const trackVisitor = (event)=>{
-      socket.emit("visitor", `${navigator.userAgent} ${window.location.href}`)
-    }
 
-    // click event
-    window.addEventListener("click", trackVisitor)
-
-    return ()=>{
-      window.removeEventListener("click", trackVisitor)
-    }
-  },[])
 
   return (
     <Wrapper>
@@ -44,6 +31,7 @@ const App = () => {
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
+      <TrackVisitor />
     </Wrapper>
   );
 };
