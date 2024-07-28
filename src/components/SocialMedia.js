@@ -8,7 +8,7 @@ const SocialMedia = ({ className }) => {
   return (
     <Wrapper className={className}>
       <a
-        href="https://github.com/keeforever"
+        href="/not-available"
         className="link"
         target="_blank"
         rel="noreferrer"
@@ -23,7 +23,7 @@ const SocialMedia = ({ className }) => {
         <RiLinkedinFill className="icon" />
       </a>
       <a
-        href="https://t.me/keeforever"
+        href="/not-available"
         className="link"
         target="_blank"
         rel="noreferrer"
